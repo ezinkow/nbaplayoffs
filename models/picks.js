@@ -4,7 +4,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        game_id: {
+        series_id: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
@@ -12,7 +12,15 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        game_date: {
+        points: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+        },
+        games: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+        },
+        series_round: {
             type: DataTypes.TEXT,
             allowNull: true,
         }

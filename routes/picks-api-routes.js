@@ -16,21 +16,23 @@ module.exports = function (app) {
     app.post("/api/picks", function (req, res) {
         Picks.create({
             name: req.body.name,
-            game_id: req.body.game_id,
+            series_id: req.body.series_id,
             pick: req.body.pick,
-            game_date: req.body.game_date
+            series_round: req.body.series_round,
+            points: req.body.points,
+            games: req.body.games
         })
             .then(function (dbpicks) {
                 res.json(dbpicks)
             })
     });
 
-    // Find picks where date = __
-    app.get('/api/picks/:date', function (req, res) {
+    // Find picks where round = __
+    app.get('/api/picks/:round', function (req, res) {
         console.log('req params', req.params)
         Picks.findAll({
             where: {
-                game_date: req.params.date
+                series_round: req.params.round
             }
         })
             .then(function (dbpicks) {

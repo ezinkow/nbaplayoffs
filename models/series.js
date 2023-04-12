@@ -1,22 +1,22 @@
 module.exports = function (sequelize, DataTypes) {
-    const Games = sequelize.define("Games", {
-        game_date: {
+    const Series = sequelize.define("Series", {
+        series_round: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        time: {
+        lower_seed_seed: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        underdog: {
+        lower_seed: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        favorite: {
+        higher_seed_seed: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        line: {
+        higher_seed: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
@@ -26,5 +26,5 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    return Games;
+    return Series;
 };
