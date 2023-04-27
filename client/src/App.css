@@ -11,6 +11,7 @@
 a:active { text-decoration: none; }
 a:hover { text-decoration: none; }
 
+
 .navtext{
     text-decoration: none;
     margin-top: 100px;
@@ -27,6 +28,10 @@ a:hover { text-decoration: none; }
 .dropdown-menu {
     height: 200px;
     overflow-y: scroll;
+  }
+
+  .bold{
+    font-weight:bold
   }
 
   .picksTable{
