@@ -19,7 +19,7 @@ export default function PicksRound() {
     const [pointsTotal, setPointsTotal] = useState('')
     const [gamesTotal, setGamesTotal] = useState('')
 
-    const round = '3'
+    const round = '4'
 
     const customStyles = {
         content: {
