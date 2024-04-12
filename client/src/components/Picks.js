@@ -52,7 +52,6 @@ export default function PicksRound() {
             try {
                 const response = await axios('api/roundvalues')
                 setSeriesValue(response.data[0].points)
-                console.log(response)
             } catch (e) {
                 console.log(e)
             }
