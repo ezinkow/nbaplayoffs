@@ -42,7 +42,7 @@ export default function NameSubmit() {
         < div >
             < form >
                 <Toaster />
-                <label for="fname"><h3>Enter your name. This will be the name you select all tournament:</h3></label><br />
+                <label for="fname"><h3>Enter your name. This will be the name you select all playoffs:</h3></label><br />
                 <input onChange={handleNameChange} type="text" id="name" value={name} placeholder='Name' /><br /><br />
                 <Button onClick={handleNameSubmit} type="submit" value="Submit">Submit</Button>
                 <h3>Please check the list below for any name duplicates, include last initial if needed</h3>
