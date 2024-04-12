@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Table from 'react-bootstrap/Table';
 
-export default function Standings() {
-    const [standings, setStandings] = useState([])
+export default function NamesDisplay() {
+    const [names, setNames] = useState([])
     
     const customStyles = {
         content: {
@@ -17,26 +17,26 @@ export default function Standings() {
         },
     };
     useEffect(() => {
-        async function fetchStandings() {
+        async function fetchNames() {
             try {
-                const response = await axios(`api/standings/`)
-                const sortedList = response.data.sort( (a,b) => b.points - a.points );
-                setStandings(sortedList)
+                const response = await axios("api/names/")
+                const sortedList = response.data.sort((a,b) => (a.name > b.name) ? 1 : -1);
+                setNames(sortedList)
+                console.log('NAMES:',names)
+                console.log(response.data)
             } catch (e) {
                 console.log(e)
             }
         }
-        fetchStandings()
+        fetchNames()
     }, [])
 
     const tableGrid =
-        standings.map(standing =>
+        names.map(name =>
             <tr>
                 <>
-                    
-                    {/* <td key={standing.rank}>{standing.rank}</td> */}
-                    <td key={standing.name}>{standing.name}</td>
-                    <td key={standing.points}>{standing.points}</td>
+                    <td key={name.id}>{name.name}</td>
+                    <td key={name.name}>{name.paid}</td>
                 </>
             </tr>
         )
@@ -46,12 +46,12 @@ export default function Standings() {
         <div className='container'>
             <br></br>
             <div className="table">
+            <h2>Signed Up:</h2>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            {/* <th>Rank</th> */}
                             <th>Name</th>
-                            <th>Points</th>
+                            <th>Paid?</th>
                         </tr>
                     </thead>
                     <tbody>

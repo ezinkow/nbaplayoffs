@@ -12,6 +12,7 @@ export default function PicksRound() {
     const [name, setName] = useState('SELECT YOUR NAME IN DROPDOWN!')
     const [names, setNames] = useState([''])
     const [seriess, setSeries] = useState([])
+    const [seriesValue, setSeriesValue] = useState('')
     const [picks, setPicks] = useState([])
     const [nameToast, setNameToast] = useState('')
     const [currentPick, setCurrentPick] = useState([])
@@ -19,22 +20,11 @@ export default function PicksRound() {
     const [pointsTotal, setPointsTotal] = useState('')
     const [gamesTotal, setGamesTotal] = useState('')
 
-    const round = '4'
 
-    const customStyles = {
-        content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-        },
-    };
     useEffect(() => {
         async function fetchSeries() {
             try {
-                const response = await axios(`api/series/${round}`)
+                const response = await axios('api/series/y')
                 setSeries(response.data)
             } catch (e) {
                 console.log(e)
@@ -55,6 +45,19 @@ export default function PicksRound() {
             }
         }
         fetchNames()
+    }, [])
+
+    useEffect(() => {
+        async function fetchSeriesValue() {
+            try {
+                const response = await axios('api/roundvalues')
+                setSeriesValue(response.data[0].points)
+                console.log(response)
+            } catch (e) {
+                console.log(e)
+            }
+        }
+        fetchSeriesValue()
     }, [])
 
     // Set Name
@@ -253,7 +256,7 @@ export default function PicksRound() {
             </DropdownButton>
             <h4> Name: {name}</h4>
             <h5>Most Recent Pick: {currentPick}</h5>
-            <h5>TOTAL POINTS: {pointsTotal} (must equal 8)</h5>
+            <h5>TOTAL POINTS: {pointsTotal} (must equal {seriesValue})</h5>
             <div className="table">
                 <Table striped bordered hover>
                     <thead>

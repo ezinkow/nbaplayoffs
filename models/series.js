@@ -23,6 +23,10 @@ module.exports = function (sequelize, DataTypes) {
         winner: {
             type: DataTypes.TEXT,
             allowNull: true,
+        },
+        status: {
+            type: DataTypes.TEXT,
+            allowNull: true,
         }
     });
 

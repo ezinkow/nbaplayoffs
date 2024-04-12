@@ -39,6 +39,20 @@ module.exports = function (app) {
                 res.json(dbpicks)
             })
         console.log(req.params)
+    });
+
+    // Find picks where set to visible
+    app.get('/api/picks/:make_visible', function (req, res) {
+        console.log('req params', req.params)
+        Picks.findAll({
+            where: {
+                game_date: req.params.date
+            }
+        })
+            .then(function (dbpicks) {
+                res.json(dbpicks)
+            })
+        console.log(req.params)
     })
 
     // // Find picks where id = __
