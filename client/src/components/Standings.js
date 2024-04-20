@@ -6,16 +6,6 @@ import Table from 'react-bootstrap/Table';
 export default function Standings() {
     const [standings, setStandings] = useState([])
     
-    const customStyles = {
-        content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-        },
-    };
     useEffect(() => {
         async function fetchStandings() {
             try {
@@ -33,8 +23,6 @@ export default function Standings() {
         standings.map(standing =>
             <tr>
                 <>
-                    
-                    {/* <td key={standing.rank}>{standing.rank}</td> */}
                     <td key={standing.name}>{standing.name}</td>
                     <td key={standing.points}>{standing.points}</td>
                 </>

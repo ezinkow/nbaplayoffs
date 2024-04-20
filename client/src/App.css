@@ -37,3 +37,79 @@ a:hover { text-decoration: none; }
   .picksTable{
     width: 50%;
   }
+
+  .fix-col {
+    border-left: solid 1px rgb(75, 90, 102);
+    border-right: solid 1px rgb(75, 90, 102);
+    left: 0;
+    position: absolute;
+    top: auto;
+    /* color: blue; */
+}
+
+.table-main {
+  border: none;
+  border-right: solid 1px rgb(75, 90, 102);
+  border-collapse: separate;
+  border-spacing: 0;
+  font: normal 13px Arial, sans-serif;
+}
+
+.table-main thead th {
+  background-color: rgb(203, 220, 233);
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: left;
+  text-shadow: 1px 1px 1px #fff;
+  white-space: nowrap;
+  margin-right: 50px;
+}
+
+.table-main tbody td {
+  border-bottom: solid 2px rgb(0, 140, 255);
+  color: #333;
+  padding: 10px;
+  text-shadow: 1px 1px 1px #fff;
+  white-space: nowrap;
+  margin: 50px;
+  margin-right: 50px;
+}
+
+.table {
+  position: relative;
+}
+
+.table-scroll {
+  margin-left: 120px;
+  overflow-x: scroll;
+  overflow-y: visible;
+  padding-bottom: 5px;
+  width: 2000px;
+  
+} 
+
+.table-main .fix-col {
+  border-left: solid 1px rgb(75, 90, 102);
+  border-right: solid 1px rgb(75, 90, 102);
+  left: 0;
+  position: absolute;
+  top: auto;
+  width: 110px;
+}
+
+
+
+.table-head {
+  padding-bottom: 1000px;
+  background-color: blue;
+}
+
+.name {
+  width: 500px;
+  
+}
+
+.inputs{
+  display:inline-block
+}

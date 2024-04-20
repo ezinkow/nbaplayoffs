@@ -28,11 +28,11 @@ module.exports = function (app) {
     });
 
     // Find picks where round = __
-    app.get('/api/picks/:round', function (req, res) {
+    app.get('/api/picks/:make_visible', function (req, res) {
         console.log('req params', req.params)
         Picks.findAll({
             where: {
-                series_round: req.params.round
+                make_visible: req.params.make_visible
             }
         })
             .then(function (dbpicks) {
