@@ -6,16 +6,6 @@ import Table from 'react-bootstrap/Table';
 export default function NamesDisplay() {
     const [names, setNames] = useState([])
     
-    const customStyles = {
-        content: {
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            marginRight: '-50%',
-            transform: 'translate(-50%, -50%)',
-        },
-    };
     useEffect(() => {
         async function fetchNames() {
             try {
