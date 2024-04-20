@@ -102,6 +102,7 @@ export default function PicksRound() {
             activePicks.push(currentPickObj)
             setPicks(activePicks);
         }
+        console.log(picks)
     }
 
     function pointsCounter() {
@@ -167,9 +168,11 @@ export default function PicksRound() {
             if (findCurrentPick === undefined) {
                 activePicks.push(currentPickObj)
                 setPicks(activePicks)
+                console.log(activePicks)
             } else {
                 findCurrentPick.points = currentPoints
                 setPicks(activePicks)
+                console.log(activePicks)
             }
         } else {
             toast.error('Please select team first, then RESELECT point value',
@@ -186,6 +189,7 @@ export default function PicksRound() {
                 });
         }
         pointsCounter()
+        console.log(picks)
     }
 
     // Send name and picks to database and reset fields

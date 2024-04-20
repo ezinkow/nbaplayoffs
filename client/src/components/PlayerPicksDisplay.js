@@ -48,7 +48,7 @@ export default function PicksDisplay() {
                         <tr>
                             <th className="fix-col" key='series id'>Name</th>
                             {series.length > 0 ? series.map(series =>
-                                <th key={series.id}>{series.underdog} vs {series.favorite}|P|G</th>
+                                <th key={series.id}>{series.lower_seed} vs {series.higher_seed}|P|G</th>
                             ) : ""
                             }
                         </tr>
