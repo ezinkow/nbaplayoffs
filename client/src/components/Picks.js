@@ -50,7 +50,7 @@ export default function PicksRound() {
     useEffect(() => {
         async function fetchSeriesValue() {
             try {
-                const response = await axios('api/roundvalues')
+                const response = await axios('api/roundvalues/y')
                 setSeriesValue(response.data[0].points)
             } catch (e) {
                 console.log(e)

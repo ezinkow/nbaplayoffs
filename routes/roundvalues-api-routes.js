@@ -13,10 +13,10 @@ module.exports = function (app) {
     });
 
     // Find roundvalues where id = __
-    app.get('/api/roundvalues/:status', function (req, res) {
+    app.get('/api/roundvalues/:active_round', function (req, res) {
         Roundvalues.findAll({
             where: {
-                status: req.params.status
+                active_round: req.params.active_round
             }
         })
             .then(function (dbroundvalues) {
