@@ -5,10 +5,11 @@ import Table from 'react-bootstrap/Table';
 
 export default function PicksDisplay() {
     const [picks, setPicks] = useState([])
+
     useEffect(() => {
         async function fetchPicks() {
             try {
-                const response = await axios(`api/picks/y`)
+                const response = await axios(`api/picksdisplay`)
                 const sortedList = response.data.sort((a, b) => (a.series_id > b.series_id) ? 1 : (a.series_id === b.series_id) ? ((a.name > b.name) ? 1 : -1) : -1)
                 setPicks(sortedList)
             } catch (e) {
@@ -27,7 +28,7 @@ export default function PicksDisplay() {
                     <thead>
                         <tr>
                             <th key='series id'>Name</th>
-                            <th key='series id'>Game #</th>
+                            <th key='series id'>Series #</th>
                             <th key='series pick'>Pick</th>
                         </tr>
                     </thead>
