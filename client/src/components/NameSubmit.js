@@ -81,7 +81,7 @@ export default function NameSubmit() {
                     </Form.Group>
                     <Form.Group onChange={handleNameChange} type="text" id="name" value={name} className="mb-3" controlId="formBasicName">
                         <Form.Label>Username:</Form.Label>
-                        <Form.Control size="lg" type="name" placeholder="Enter Name You'll Select All Week" />
+                        <Form.Control size="lg" type="name" placeholder="Enter Name You'll Select All Playoffs" />
                     </Form.Group>
                     <Form.Group onChange={handleEmail_addressChange} type="text" id="email_address" value={email_address} className="mb-3" controlId="formPlaintextEmail">
                         <Form.Label>Email address</Form.Label>
