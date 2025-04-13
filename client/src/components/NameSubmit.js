@@ -48,6 +48,7 @@ export default function NameSubmit() {
             real_name,
             name,
             email_address,
+            phone,
             email_opt_in,
             paid
         })
