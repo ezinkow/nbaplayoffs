@@ -89,7 +89,7 @@ export default function NameSubmit() {
                         <Form.Control size="lg" type="email" placeholder="Enter email" />
                     </Form.Group>
                     <Form.Group onChange={handlePhoneChange} type="text" id="phone" value={phone} className="mb-3" controlId="formBasicPhone">
-                        <Form.Label>Email address</Form.Label>
+                        <Form.Label>Phone Number</Form.Label>
                         <Form.Control size="lg" type="phone" placeholder="Phone Number" />
                     </Form.Group>
                     <Form.Group onChange={handleEmail_opt_inChange} className="mb-3" controlId="formBasicCheckbox">
