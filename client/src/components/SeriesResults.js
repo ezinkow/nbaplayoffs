@@ -34,8 +34,8 @@ export default function SeriesResults() {
                     {series.length > 0 ? series.map(thisSeries =>
                         <tr>
                             <td key={thisSeries.id}>{thisSeries.id}</td>
-                            <td key={thisSeries.higher_seed}>{thisSeries.higher_seed}</td>
-                            <td key={thisSeries.lower_seed}>{thisSeries.lower_seed}</td>
+                            <td key={thisSeries.higher_seed}>(thisSeries.higher_seed_seed) {thisSeries.higher_seed}</td>
+                            <td key={thisSeries.lower_seed}>(thisSeries.lower_seed_seed) {thisSeries.lower_seed}</td>
                             <td key={thisSeries.winner}>{thisSeries.winner}</td>
                             <td key={thisSeries.games}>{thisSeries.games}</td>
                         </tr>
