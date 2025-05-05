@@ -27,6 +27,10 @@ module.exports = function (sequelize, DataTypes) {
         status: {
             type: DataTypes.TEXT,
             allowNull: true,
+        },
+        games: {
+            type: DataTypes.TEXT,
+            allowNull: true,
         }
     });
 
